@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width,initial-scale=1">
-        <title>{{ Lang::get('home.title') }}</title>
+        <title>{{ Lang::get('home.guru') }} - {{ Lang::get('home.catch_phrase') }}</title>
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="/css/bootstrap.min.css">
 
@@ -57,11 +57,11 @@
                 </div>
                 <div class="right-container col-xs-12 col-md-12 no-left">
                    @include('component.top-menu')
-                    {{--@include('component.bottom-menu')--}}
+                    @include('component.bottom-menu')
                     <div class="body">
                          <!-- Section -->
                          @yield('content')
-                         @yield('footer')
+                         {{--@yield('footer')--}}
                     </div>
                 </div>
             </div>

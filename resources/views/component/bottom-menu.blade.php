@@ -1,19 +1,16 @@
 <div class="bottom-menu clearfix" >
-    <div class="bottom-menu-left clearfix pull-left">
-        <div class="pull-left menu">
-            <a href="javascript:void(0);" id="toggle-menu" data-show="0">
-                <i class="fa fa-align-justify"></i>
-                <span>MENU</span>
-            </a>
-        </div>
-        <div class="mute pull-left menu-desc">
-            YOUR PERSONAL TRAVEL ASSISTANT
-        </div>
-        <div class="menu-title">
-            <a href="/">GURU</a>
-        </div>
-    </div>
-    <div class="bottom-menu-right clearfix pull-left">
+    {{--<div class="bottom-menu-left clearfix pull-left">--}}
+        {{--<div class="pull-left menu">--}}
+            {{--<a href="javascript:void(0);" id="toggle-menu" data-show="0">--}}
+                {{--<i class="fa fa-align-justify"></i>--}}
+                {{--<span>MENU</span>--}}
+            {{--</a>--}}
+        {{--</div>--}}
+        {{--<div class="mute pull-left menu-desc">--}}
+            {{--YOUR PERSONAL TRAVEL ASSISTANT--}}
+        {{--</div>--}}
+    {{--</div>--}}
+    <div class="bottom-menu-right clearfix">
         <ul class="list-unstyled list-inline">
             <li><a href="">Login</a></li>
             <li><a href="">Sign up</a></li>

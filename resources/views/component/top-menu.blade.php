@@ -7,13 +7,13 @@
     </span>
     <span class="title">
        <i class="fa fa-map-marker"></i>
-        GURU
+        {{ Lang::get('home.guru') }}
     </span>
     <span class="operator-span">
         <div class="become-operator">
-            WANT TO DRIVE WITH GURU?
+           {{ Lang::get('home.want_to_drive') }}
             <br/>
-            <button class="guru-btn btn-danger btn-sm"> BECOME AN OPERATOR</button>
+            <button class="guru-btn btn-danger btn-sm"> {{ Lang::get('home.become_an_operator') }}</button>
         </div>
     </span>
 </div>

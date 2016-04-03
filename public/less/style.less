@@ -108,9 +108,11 @@ a {
       position: fixed;
       padding: 0px;
       left: calc(~"100% - 75%");
-      background-image: url('/img/1.jpg');
-      background-repeat: no-repeat;
-      background-size: contain;
+      background: linear-gradient( rgba(165, 189, 180, 0.33), rgba(165, 189, 180, 0.33) ),url('/img/1.jpg') no-repeat center center fixed;
+      webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
       transition: all 0.5s ease;
 
       &.no-left {
@@ -173,7 +175,7 @@ a {
           }
 
           .become-operator {
-            font-size: 11px;
+            font-size: 12px;
             display:block;
 
             @media @desktop {
@@ -194,7 +196,7 @@ a {
       }
 
       .bottom-menu {
-        background: rgba(28, 50, 54, 0.51);
+        background: rgba(165, 189, 180, 0.7);
         color: #fff;
         border-bottom: 1px solid #fff;
 
@@ -231,11 +233,26 @@ a {
         }
 
         .bottom-menu-right {
-          width: 30%;
+          width: 100%;
+          padding: 5px 15%;
           ul {
-            margin-bottom: 0px;
+            margin:0 auto;
+            display:block;
+
+            @media @desktop {
+              margin-bottom: 0px;
+              display:inline-block;
+            }
 
             li {
+              width: 45%;
+              text-align: center;
+
+              @media @desktop {
+                width: auto;
+                text-align: justify;
+              }
+
               &:first-child {
                 border-right: 1px solid @red;
               }

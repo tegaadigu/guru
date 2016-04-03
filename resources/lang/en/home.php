@@ -1,8 +1,9 @@
 <?php
 return [
-    'title' => 'Guru - Instant Digital Ticketing.',
     'sign_up' => 'Sign Up',
     'home' => 'Home',
     'guru' => 'Guru',
-    'become_a_driver' => 'want to drive with guru?',
+    'want_to_drive' => 'want to drive with guru?',
+    'become_an_operator' => 'Become An Operator',
+    'catch_phrase' => 'Instant Digital Ticketing.'
 ];
