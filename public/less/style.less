@@ -18,8 +18,8 @@
   font-weight: inherit;
 }
 
-@smartphones: ~"only screen and (max-width: 479px)";
-@tablets: ~"only screen and (min-width: 768px) and (max-width: 959px)";
+@mobile: ~"(max-width: 479px)";
+@desktop: ~"(min-width: 840px)";
 
 /*Variable Declaration..*/
 @red: #d9534f;
@@ -122,13 +122,19 @@ a {
       .top-menu {
         background-color: #1D3B66;
         color: #fff;
-        padding: 5px 50px 3px 150px;
-
+        padding: 15px;
+        @media @desktop {
+          padding: 5px 50px 3px 150px;
+        }
         .site-phrase {
-          display: inline-block;
+          display: none;
           text-align: center;
           position: relative;
           bottom: 8px;
+
+          @media @desktop {
+            display: inline-block;
+          }
 
           img {
             height: 25px;
@@ -136,14 +142,19 @@ a {
         }
 
         .title {
-          padding: 0 30% 0 20%;
-
-          @media @smartphones, @tablets {
-            padding: 0 18% 0 18%;
-          }
+          display:block;
           font-size: 40px;
           text-align: center;
           font-family: 'Aller-Regular';
+          border-bottom: 1px solid #ddd;
+          margin-bottom: 8px;
+
+          @media @desktop {
+            padding: 0 30% 0 20%;
+            display:inline-block;
+            margin:0;
+            border:none;
+          }
 
           i {
             color: #F44336;
@@ -151,17 +162,32 @@ a {
         }
 
         .operator-span {
-          position: relative;
-          display: inline-block;
-          .become-operator {
+
+          display: block;
+          margin: 0 auto;
+          text-align: center;
+
+          @media @desktop {
+            position: relative;
             display: inline-block;
+          }
+
+          .become-operator {
             font-size: 11px;
+            display:block;
+
+            @media @desktop {
+              display: inline-block;
+            }
 
             & > button.guru-btn {
               font-size: 9px;
               margin: 0 auto;
-              width: 80%;
               display: block;
+              @media @desktop {
+                width: 80%;
+              }
+
             }
           }
         }

@@ -93,44 +93,75 @@ a:focus {
 .container-fluid .row .right-container .top-menu {
   background-color: #1D3B66;
   color: #fff;
-  padding: 5px 50px 3px 150px;
+  padding: 15px;
+}
+@media (min-width: 840px) {
+  .container-fluid .row .right-container .top-menu {
+    padding: 5px 50px 3px 150px;
+  }
 }
 .container-fluid .row .right-container .top-menu .site-phrase {
-  display: inline-block;
+  display: none;
   text-align: center;
   position: relative;
   bottom: 8px;
+}
+@media (min-width: 840px) {
+  .container-fluid .row .right-container .top-menu .site-phrase {
+    display: inline-block;
+  }
 }
 .container-fluid .row .right-container .top-menu .site-phrase img {
   height: 25px;
 }
 .container-fluid .row .right-container .top-menu .title {
-  padding: 0 30% 0 20%;
+  display: block;
   font-size: 40px;
   text-align: center;
   font-family: 'Aller-Regular';
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 8px;
 }
-@media only screen and (max-width: 479px), only screen and (min-width: 768px) and (max-width: 959px) {
+@media (min-width: 840px) {
   .container-fluid .row .right-container .top-menu .title {
-    padding: 0 18% 0 18%;
+    padding: 0 30% 0 20%;
+    display: inline-block;
+    margin: 0;
+    border: none;
   }
 }
 .container-fluid .row .right-container .top-menu .title i {
   color: #F44336;
 }
 .container-fluid .row .right-container .top-menu .operator-span {
-  position: relative;
-  display: inline-block;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+@media (min-width: 840px) {
+  .container-fluid .row .right-container .top-menu .operator-span {
+    position: relative;
+    display: inline-block;
+  }
 }
 .container-fluid .row .right-container .top-menu .operator-span .become-operator {
-  display: inline-block;
   font-size: 11px;
+  display: block;
+}
+@media (min-width: 840px) {
+  .container-fluid .row .right-container .top-menu .operator-span .become-operator {
+    display: inline-block;
+  }
 }
 .container-fluid .row .right-container .top-menu .operator-span .become-operator > button.guru-btn {
   font-size: 9px;
   margin: 0 auto;
-  width: 80%;
   display: block;
+}
+@media (min-width: 840px) {
+  .container-fluid .row .right-container .top-menu .operator-span .become-operator > button.guru-btn {
+    width: 80%;
+  }
 }
 .container-fluid .row .right-container .bottom-menu {
   background: rgba(28, 50, 54, 0.51);
