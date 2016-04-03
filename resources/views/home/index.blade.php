@@ -28,3 +28,7 @@
 		</div>
     </div>
 @stop
+
+@section('footer')
+	@include('home.footer')
+@stop

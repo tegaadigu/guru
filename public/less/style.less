@@ -1,0 +1,251 @@
+/*Aller Font declaration*/
+
+@font-face {
+  font-family: Aller;
+  src: url("Aller/Aller_Lt.ttf");
+  font-weight: inherit;
+}
+
+@font-face {
+  font-family: Aller-Bold;
+  src: url("Aller/Aller_Bd.ttf");
+  font-weight: inherit;
+}
+
+@font-face {
+  font-family: Aller-Regular;
+  src: url("Aller/Aller_Rg.ttf");
+  font-weight: inherit;
+}
+
+@smartphones: ~"only screen and (max-width: 479px)";
+@tablets: ~"only screen and (min-width: 768px) and (max-width: 959px)";
+
+/*Variable Declaration..*/
+@red: #d9534f;
+
+/*...Master file styles.. */
+body {
+  background-color: #ddd;
+  font-family: "Aller";
+}
+
+.guru-btn {
+  background-color: #599ADD;
+  border: none;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+
+  &:hover, &:focus {
+    text-decoration: none;
+    color: @red;
+  }
+}
+
+.container-fluid {
+  .row {
+    .left-container {
+      float: left;
+      background: #000;
+      height: 100%;
+      transition: all 0.5s ease;
+      color: #fff;
+      padding: 15px 0px;
+
+      &.hidden-menu {
+        visibility: hidden;
+        opacity: 0;
+        transition: visibility 1.5s, opacity 0.5s linear;
+      }
+
+      .signup {
+        padding: 0px 40px;
+
+        & > a {
+          width: 100%;
+        }
+      }
+
+      .left-menu {
+        padding: 40px 0px;
+
+        ul.top-list > li {
+          > a {
+            display: block;
+            padding: 13px 15px;
+            border-top: 1px solid #ddd;
+            text-transform: uppercase;
+            transition: all 0.5s ease;
+          }
+
+          &.embeded-list {
+            border-top: 1px solid #ddd;
+
+            ul > li {
+              &:first-child {
+                a {
+                  padding-top: 20px;
+                }
+              }
+              a {
+                display: block;
+                padding: 9px 10px;
+              }
+            }
+            padding-bottom: 60px;
+          }
+        }
+      }
+
+    }
+    .right-container {
+      float: left;
+      background-color: #DDD;
+      height: 100em;
+      position: fixed;
+      padding: 0px;
+      left: calc(~"100% - 75%");
+      background-image: url('/img/1.jpg');
+      background-repeat: no-repeat;
+      background-size: contain;
+      transition: all 0.5s ease;
+
+      &.no-left {
+        transition: all 0.5s ease;
+        left: 0px;
+        width: 100%;
+      }
+
+      .top-menu {
+        background-color: #1D3B66;
+        color: #fff;
+        padding: 5px 50px 3px 150px;
+
+        .site-phrase {
+          display: inline-block;
+          text-align: center;
+          position: relative;
+          bottom: 8px;
+
+          img {
+            height: 25px;
+          }
+        }
+
+        .title {
+          padding: 0 30% 0 20%;
+
+          @media @smartphones, @tablets {
+            padding: 0 18% 0 18%;
+          }
+          font-size: 40px;
+          text-align: center;
+          font-family: 'Aller-Regular';
+
+          i {
+            color: #F44336;
+          }
+        }
+
+        .operator-span {
+          position: relative;
+          display: inline-block;
+          .become-operator {
+            display: inline-block;
+            font-size: 11px;
+
+            & > button.guru-btn {
+              font-size: 9px;
+              margin: 0 auto;
+              width: 80%;
+              display: block;
+            }
+          }
+        }
+      }
+
+      .bottom-menu {
+        background: rgba(28, 50, 54, 0.51);
+        color: #fff;
+        border-bottom: 1px solid #fff;
+
+        .bottom-menu-left {
+          width: 70%;
+          padding: 0px 0px 0px 50px;
+
+          .menu {
+            font-size: 20px;
+            font-family: "Aller-Regular";
+            padding: 15px 0px;
+
+            span {
+              color: #000;
+            }
+          }
+
+          .menu-desc {
+            font-size: 14px;
+            padding: 20px 25px 0px 30px;
+          }
+
+          .menu-title {
+            font-size: 40px;
+            text-align: center;
+            font-family: "Aller-Bold";
+            a {
+              text-decoration: none;
+              &:hover {
+                color: @red;
+              }
+            }
+          }
+        }
+
+        .bottom-menu-right {
+          width: 30%;
+          ul {
+            margin-bottom: 0px;
+
+            li {
+              &:first-child {
+                border-right: 1px solid @red;
+              }
+              a {
+                display: block;
+                text-decoration: none;
+                color: #fff;
+
+                &:hover {
+                  color: @red;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .footer {
+        text-transform: uppercase;
+        font-size: 12px;
+        a {
+          color: #4C4C4C;
+        }
+      }
+    }
+  }
+}
+
+#home-trip-form {
+  padding: 20px 0px;
+  .has-feedback {
+    span.form-control-feedback {
+      top: 0px;
+      text-align: center;
+      color: #555;
+      font-size: 25px;
+    }
+  }
+}

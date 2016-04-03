@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Menu;
+use Illuminate\Support\Facades\Lang;
 
 class LeftMenu
 {
@@ -19,7 +20,7 @@ class LeftMenu
     {
         Menu::make('leftNav', function($menu){
 
-                            $menu->add('Home');
+                            $menu->add(Lang::get('home.home'));
                             $menu->add('Safety Tips');
                             $menu->add('Be a transporter');
                             $menu->add('account');

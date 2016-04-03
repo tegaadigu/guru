@@ -11,4 +11,4 @@
 |
 */
 
-Route::get('/', "PagesController@index")->middleware(['menu']);
+Route::get('/', "IndexController@index")->middleware(['menu']);

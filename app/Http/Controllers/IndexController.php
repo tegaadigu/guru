@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use Menu;
 
-class PagesController extends Controller
+class IndexController extends Controller
 {
 
     /**
@@ -14,10 +14,6 @@ class PagesController extends Controller
      */
     public function index()
     {
-        $footer = true;
-
-        $name = 'Tega Adigu';
-
-       return view('pages.home', compact('name', 'footer'));
+        return view('home.index', ['name' => "Tega Adigu"]);
     }
 }
