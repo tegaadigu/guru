@@ -12,7 +12,3 @@
 */
 
 Route::get('/', "PagesController@index")->middleware(['menu']);
-
-Route::get('about', "PagesController@about");
-
-Route::get('lessons/{id}', "PagesController@show");

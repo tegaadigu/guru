@@ -26,13 +26,5 @@
 				<button type="submit" class="btn btn-danger" style="width:100%;padding:10px 12px;">Find Trips</button>
 			</form>
 		</div>
-		
-	   <!--  <h1>{{ $name }}</h1>
-
-	    @foreach($lessons AS $idx => $lesson)
-	      <li><a href="/lessons/{{$idx}}">  {{ $lesson }} </a></li>
-	    @endforeach
-
-	    hahah -->
     </div>
 @stop
