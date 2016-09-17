@@ -13,7 +13,8 @@ module.exports = function(grunt) {
         less: {
             dev: {
                 files: {
-                    "public/css/style.css": "public/less/style.less"
+                    "public/css/style.css": "public/less/style.less",
+                    "public/css/operator.css": "public/less/operator.less"
                 }
             },
         },

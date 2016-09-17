@@ -13,7 +13,7 @@
         <div class="become-operator">
            {{ Lang::get('home.want_to_drive') }}
             <br/>
-            <button class="guru-btn btn-danger btn-sm"> {{ Lang::get('home.become_an_operator') }}</button>
+            <a href="{{ url('operator') }}" class="guru-btn btn-danger btn-sm"> {{ Lang::get('home.become_an_operator') }}</a>
         </div>
     </span>
 </div>

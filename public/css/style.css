@@ -1,3 +1,9 @@
+/*Variable Declaration..*/
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
 /*Aller Font declaration*/
 @font-face {
   font-family: Aller;
@@ -14,7 +20,6 @@
   src: url("Aller/Aller_Rg.ttf");
   font-weight: inherit;
 }
-/*Variable Declaration..*/
 /*...Master file styles.. */
 body {
   background-color: #ddd;

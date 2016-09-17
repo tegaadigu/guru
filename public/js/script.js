@@ -7,3 +7,11 @@ $(document).ready(function(){
 
 	$('#toggle-menu').data('menu', new Menu($('#toggle-menu')));
 })
+
+$.ajaxPrefilter(function(options, originalOptions, xhr) {
+	var token = $('meta[name="csrf_token"]').attr('content');
+
+	if (token) {
+		return xhr.setRequestHeader('X-XSRF-TOKEN', token);
+	}
+});

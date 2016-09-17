@@ -11,4 +11,37 @@
 |
 */
 
-Route::get('/', "IndexController@index")->middleware(['menu']);
+Route::get(
+    '/',
+    [
+        'as' => 'index',
+        'uses' => 'Index@index',
+    ]
+);
+
+Route::get(
+    '/operator',
+    [
+        'as' => 'operator',
+        'uses' => 'Operator@index',
+    ]
+);
+
+Route::post(
+    '/operator/register',
+    [
+        'as' => 'operator',
+        'uses' => 'Operator@register'
+    ]
+);
+
+
+Route::get(
+    '/dashboard',
+    [
+        'as' => 'operator',
+        'uses' => 'Operator@dashboard',
+    ]
+);
+
+Route::post('auth/register', 'Auth\AuthController@postRegister');
