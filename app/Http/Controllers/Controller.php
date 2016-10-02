@@ -13,6 +13,6 @@ abstract class Controller extends BaseController
     public function __construct()
     {
         $this->middleware('menu');
-        $this->middleware('faker');
+//        $this->middleware('faker');
     }
 }
