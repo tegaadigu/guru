@@ -3,6 +3,10 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use Faker\Factory;
+use Faker\Provider\Lorem;
+use Faker\Provider\Image;
+use Faker\Provider\PhoneNumber;
 
 class Faker
 {
@@ -15,10 +19,10 @@ class Faker
      */
     public function handle($request, Closure $next)
     {
-        $faker = \Faker\Factory::create();
-        $faker->addProvider(new \Faker\Provider\Lorem($faker));
-        $faker->addProvider(new \Faker\Provider\Image($faker));
-        $faker->addProvider(new \Faker\Provider\PhoneNumber($faker));
+        $faker = Factory::create();
+        $faker->addProvider(new Lorem($faker));
+        $faker->addProvider(new Image($faker));
+        $faker->addProvider(new PhoneNumber($faker));
         \View::share('faker', $faker);
         return $next($request);
     }
