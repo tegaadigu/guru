@@ -1,0 +1,264 @@
+/*Variable Declaration..*/
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+li.dropdown-controller {
+  position: relative;
+}
+/*Aller Font declaration*/
+@font-face {
+  font-family: Aller;
+  src: url("Aller/Aller_Lt.ttf");
+  font-weight: inherit;
+}
+@font-face {
+  font-family: Aller-Bold;
+  src: url("Aller/Aller_Bd.ttf");
+  font-weight: inherit;
+}
+@font-face {
+  font-family: Aller-Regular;
+  src: url("Aller/Aller_Rg.ttf");
+  font-weight: inherit;
+}
+.btn {
+  /* just for this demo. */
+  margin-top: 5px;
+}
+.btn-arrow-right,
+.btn-arrow-left {
+  position: relative;
+  padding-left: 18px;
+  padding-right: 18px;
+}
+.btn-arrow-right {
+  padding-left: 36px;
+}
+.btn-arrow-left {
+  padding-right: 36px;
+}
+.btn-arrow-right:before,
+.btn-arrow-right:after,
+.btn-arrow-left:before,
+.btn-arrow-left:after {
+  /* make two squares (before and after), looking similar to the button */
+  content: "";
+  position: absolute;
+  top: 5px;
+  /* move it down because of rounded corners */
+  width: 22px;
+  /* same as height */
+  height: 22px;
+  /* button_outer_height / sqrt(2) */
+  background: inherit;
+  /* use parent background */
+  border: inherit;
+  /* use parent border */
+  border-left-color: transparent;
+  /* hide left border */
+  border-bottom-color: transparent;
+  /* hide bottom border */
+  border-radius: 0px 4px 0px 0px;
+  /* round arrow corner, the shorthand property doesn't accept "inherit" so it is set to 4px */
+  -webkit-border-radius: 0px 4px 0px 0px;
+  -moz-border-radius: 0px 4px 0px 0px;
+}
+.btn-arrow-right:before,
+.btn-arrow-right:after {
+  transform: rotate(45deg);
+  /* rotate right arrow squares 45 deg to point right */
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+}
+.btn-arrow-left:before,
+.btn-arrow-left:after {
+  transform: rotate(225deg);
+  /* rotate left arrow squares 225 deg to point left */
+  -webkit-transform: rotate(225deg);
+  -moz-transform: rotate(225deg);
+  -o-transform: rotate(225deg);
+  -ms-transform: rotate(225deg);
+}
+.btn-arrow-right:before,
+.btn-arrow-left:before {
+  /* align the "before" square to the left */
+  left: -11px;
+}
+.btn-arrow-right:after,
+.btn-arrow-left:after {
+  /* align the "after" square to the right */
+  right: -11px;
+}
+.btn-arrow-right:after,
+.btn-arrow-left:before {
+  /* bring arrow pointers to front */
+  z-index: 1;
+}
+.btn-arrow-right:before,
+.btn-arrow-left:after {
+  /* hide arrow tails background */
+  background-color: white;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  font-family: "Open Sans", "Trebuchet MS", Verdana, Tahoma, sans-serif;
+  text-transform: uppercase;
+}
+@media (min-width: 840px) {
+  body {
+    background-color: #ddd;
+  }
+}
+#mobile-footer {
+  position: fixed;
+  height: 43px;
+  padding: 10px;
+  text-transform: capitalize;
+  text-align: center;
+  bottom: 0;
+  color: #fff;
+  background-color: #abc0c4;
+  width: 100%;
+}
+@media (min-width: 840px) {
+  #mobile-footer {
+    display: none;
+  }
+}
+#wrapper {
+  margin: 0 auto -14px;
+  min-height: 100%;
+}
+#wrapper .mobile-title {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 20px;
+}
+@media (min-width: 840px) {
+  #wrapper .mobile-title {
+    display: none;
+  }
+}
+#wrapper .login-icon {
+  padding-top: 15px;
+}
+@media (min-width: 840px) {
+  #wrapper .login-icon {
+    display: none;
+  }
+}
+#wrapper .login-icon img {
+  width: 150px;
+  position: relative;
+  left: 30%;
+}
+#wrapper .header {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  padding: 30px;
+  padding-bottom: 0px;
+}
+@media (min-width: 840px) {
+  #wrapper .header {
+    padding-bottom: 30px;
+  }
+}
+#wrapper .header img {
+  width: 207.35px;
+  height: 53.068px;
+}
+@media (min-width: 840px) {
+  #wrapper .header img {
+    width: 282px;
+    height: auto;
+  }
+}
+#wrapper .form-dialog {
+  width: 90%;
+  margin: 0 auto;
+  background-color: #fff;
+  text-align: center;
+  padding: 20px;
+  border-radius: 5px;
+}
+@media (min-width: 840px) {
+  #wrapper .form-dialog {
+    width: 39%;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(63, 63, 68, 0.1);
+  }
+}
+#wrapper .form-dialog .header {
+  display: none;
+  text-transform: none;
+}
+@media (min-width: 840px) {
+  #wrapper .form-dialog .header {
+    display: block;
+  }
+}
+#wrapper .form-dialog .header h3 {
+  margin-bottom: 2px;
+}
+#wrapper .form-dialog .form-holder {
+  text-align: justify;
+  width: 90%;
+  margin: 0 auto;
+  text-transform: capitalize;
+  font-family: 'Roboto Condensed';
+  margin-bottom: 40px;
+}
+@media (min-width: 840px) {
+  #wrapper .form-dialog .form-holder {
+    width: 70%;
+  }
+}
+#wrapper .form-dialog .form-holder .form-group {
+  margin-bottom: 14px;
+}
+#wrapper .form-dialog .form-holder .form-group:last-of-type {
+  margin-bottom: 10px;
+}
+#wrapper .form-dialog .form-holder small {
+  display: none;
+}
+@media (min-width: 840px) {
+  #wrapper .form-dialog .form-holder small {
+    display: inline;
+  }
+}
+#wrapper .form-dialog .form-holder .checkbox label {
+  margin: 5px 0;
+  text-transform: capitalize;
+}
+#wrapper .form-dialog .form-holder .checkbox input[type=checkbox] {
+  position: relative;
+}
+#wrapper .form-dialog .form-holder button {
+  width: 100%;
+}
+#wrapper .form-dialog .form-holder .checkbox label {
+  display: block;
+}
+#wrapper .form-dialog .form-holder label {
+  display: none;
+  color: #000;
+  font-size: 13px;
+  text-transform: uppercase;
+  margin-bottom: 9px;
+  margin-top: 18px;
+  line-height: 14px;
+}
+@media (min-width: 840px) {
+  #wrapper .form-dialog .form-holder label {
+    display: block;
+  }
+}

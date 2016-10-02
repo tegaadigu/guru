@@ -18,6 +18,7 @@ class Faker
         $faker = \Faker\Factory::create();
         $faker->addProvider(new \Faker\Provider\Lorem($faker));
         $faker->addProvider(new \Faker\Provider\Image($faker));
+        $faker->addProvider(new \Faker\Provider\PhoneNumber($faker));
         \View::share('faker', $faker);
         return $next($request);
     }

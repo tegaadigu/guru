@@ -15,6 +15,8 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     const ADMIN = 1;
     const OPERATOR = 2;
     const DRIVER = 3;
+    const PERSONAL = 4;
+    const CUSTOMER = 5;
 
     /**
      * The database table used by the model.
@@ -28,7 +30,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
      *
      * @var array
      */
-    protected $fillable = ['name', 'email', 'password', 'type'];
+    protected $fillable = ['name', 'email', 'password', 'type', 'account_type'];
 
     /**
      * The attributes excluded from the model's JSON form.

@@ -3,23 +3,19 @@
 namespace App\Http\Controllers;
 
 use App\User;
-use guru\Registration\Operator\Handler;
+use guru\Registration\Handlers\Operator as RegistrationOperator;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Session;
 
 class Operator extends Controller
 {
-    /**
-     * @var Request
-     */
-    private $request;
-
-    public function __construct(Request $request)
+    public function __construct()
     {
-        $this->request = $request;
+        $this->middleware('authOperator');
         parent::__construct();
     }
     /**
@@ -29,7 +25,7 @@ class Operator extends Controller
      */
     public function index()
     {
-        if (Auth::viaRemember()) {
+        if (Auth::check()) {
             return view('operator.dashboard', ['user' => Auth::user()]);
         }
 
@@ -49,85 +45,50 @@ class Operator extends Controller
         $data['password_confirmation'] = Input::get('password_confirmation');
         $data['type'] = User::OPERATOR;
 
-        $handler = new Handler(url('/operator/dashboard'));
+        $handler = new RegistrationOperator(url('/operator/dashboard'), auth());
 
         return $handler->register($data);
 
     }
 
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Http\RedirectResponse|\Illuminate\View\View
+     */
     public function dashboard()
     {
-        dd('yooo');
+        if (Auth::check() == false) {
+            return redirect()->intended(url('operator'));
+        }
+        return view('operator.dashboard', ['user' => Auth::user()]);
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function create()
+    public function logout()
     {
-        //
+        Auth::logout();
+        return redirect()->intended(url('operator/login'));
     }
 
     /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request $request
-     *
-     * @return \Illuminate\Http\Response
+     * This refers to the actual login page
      */
-    public function store(Request $request)
+    public function login()
     {
-        //
+        return view('operator.login');
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  int $id
-     *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function show($id)
+    public function signIn()
     {
-        //
-    }
+        $data['email'] = Input::get('email');
+        $data['password'] = Input::get('password');
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int $id
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
+        $handler = new Operator(url('/operator/dashboard'));
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request $request
-     * @param  int $id
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int $id
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+        return $handler->login($data);
     }
 }

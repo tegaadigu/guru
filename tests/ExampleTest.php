@@ -8,7 +8,7 @@ class ExampleTest extends TestCase
 {
     /**
      * A basic functional test example.
-     *
+     * @test
      * @return void
      */
     public function testBasicExample()

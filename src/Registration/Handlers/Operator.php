@@ -1,15 +1,16 @@
 <?php
 
-namespace guru\Registration\Operator;
+namespace guru\Registration\Handlers;
 
-use App\Models\Operator;
 use App\User;
 use guru\Registration\Registration;
+use Illuminate\Auth\AuthServiceProvider;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Symfony\Component\HttpFoundation\Response;
 
-class Handler extends Registration
+class Operator extends Registration
 {
     const RULES = [
         'name' => 'required|max:255',
@@ -36,40 +37,21 @@ class Handler extends Registration
         } else {
             $oldPassword = $registrationData['password'];
             $registrationData['password'] = Hash::make($registrationData['password']);
-            $user = User::create($registrationData);
-            Operator::create(['account_type', $registrationData['account_type'], 'user_id' => $user->id]);
-
-            return $this->login(
+            User::create($registrationData);
+            if($this->login(
                 [
                     'email' => $registrationData['email'],
                     'password' => $oldPassword,
+                    'type' => $registrationData['type']
                 ]
-            );
+            )){
+                $data['success'] = 1;
+                $data['url'] = $this->getRedirectUrl();
+            }
+            else {
+                $data = ['success' => 0, 'errors' => ['email' => 'User Credentials not recognized']];
+            }
         }
-
-        return response()->json($data);
-    }
-
-    /**
-     * @param array $credentials
-     *
-     * @return \Illuminate\Http\JsonResponse
-     */
-    public function login(array $credentials)
-    {
-        $data = ['success' => 0, 'url' => ''];
-
-        if (Auth::attempt(
-            [
-                'email' => $credentials['email'],
-                'password' => $credentials['password'],
-            ],
-            true)
-        ) {
-            $data['success'] = 1;
-            $data['url'] = $this->getRedirectUrl();
-        }
-
 
         return response()->json($data);
     }

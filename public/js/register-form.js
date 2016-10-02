@@ -13,12 +13,12 @@ $(document).ready(function () {
             data: $(this).serializeArray()
         }).done(function (res) {
             console.log(res);
-            if(res.success === 0){
+            if (res.success === 0 || res === undefined) {
                 var response = '';
 
-                $.each(res.errors, function(index, value){
+                $.each(res.errors, function (index, value) {
                     response += value;
-                    response +='<br/>';
+                    response += '<br/>';
                 });
 
                 $('.alert').html(response).removeClass('hide');
@@ -26,10 +26,12 @@ $(document).ready(function () {
                 return false;
             }
 
+            window.location.href = res.url;
+
         })
     })
 
-    $('.account_type button').click(function(e){
+    $('.account_type button').click(function (e) {
         var parent = $(this).parent('.account_type');
         parent.find('button').removeClass('btn-success');
         $(this).addClass('btn-success');

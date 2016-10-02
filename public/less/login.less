@@ -1,0 +1,170 @@
+@import "helper";
+@import "arrow-button";
+
+html, body {
+  height: 100%;
+}
+
+body {
+  @media @desktop {
+    background-color: #ddd;
+  }
+  font-family: "Open Sans", "Trebuchet MS", Verdana, Tahoma, sans-serif;
+  text-transform: uppercase;
+}
+
+#mobile-footer {
+  position: fixed;
+  height: 43px;
+  padding: 10px;
+  text-transform: capitalize;
+  text-align: center;
+  bottom: 0;
+  color: #fff;
+  background-color: #abc0c4;
+  width: 100%;
+
+  @media @desktop {
+    display: none;
+  }
+}
+
+#wrapper {
+  margin: 0 auto -14px;
+  min-height: 100%;
+
+  .mobile-title {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 20px;
+
+    @media @desktop {
+      display: none;
+    }
+  }
+
+  .login-icon {
+    padding-top: 15px;
+
+    @media @desktop {
+      display:none;
+    }
+
+    img {
+      width: 150px;
+      position: relative;
+      left: 30%;
+    }
+  }
+
+  .header {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 30px;
+    padding-bottom: 0px;
+
+    @media @desktop {
+      padding-bottom: 30px;
+    }
+
+    img {
+      width: 207.35px;
+      height: 53.068px;
+      @media @desktop {
+        width: 282px;
+        height: auto;
+      }
+    }
+  }
+  .form-dialog {
+    @media @desktop {
+      width: 39%;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(63, 63, 68, 0.1);
+    }
+    width: 90%;
+    margin: 0 auto;
+    background-color: #fff;
+    text-align: center;
+    padding: 20px;
+    border-radius: 5px;
+
+    .header {
+      display: none;
+      text-transform: none;
+
+      @media @desktop {
+        display: block;
+      }
+
+      h3 {
+        margin-bottom: 2px;
+      }
+    }
+
+    .form-holder {
+      text-align: justify;
+      width: 90%;
+      @media @desktop {
+        width: 70%;
+      }
+
+      .form-group {
+        margin-bottom: 14px;
+
+        &:last-of-type {
+          margin-bottom: 10px;
+        }
+      }
+
+      small {
+        display: none;
+
+        @media @desktop {
+          display: inline;
+        }
+      }
+      margin: 0 auto;
+      text-transform: capitalize;
+      font-family: 'Roboto Condensed';
+      margin-bottom: 40px;
+
+      .checkbox {
+        label {
+          margin: 5px 0;
+          text-transform: capitalize;
+        }
+
+        input[type=checkbox] {
+          position: relative;
+
+        }
+      }
+
+      button {
+        width: 100%;
+      }
+
+      .checkbox {
+        label {
+          display: block;
+        }
+      }
+
+      label {
+        display: none;
+        @media @desktop {
+          display: block;
+        }
+        color: #000;
+        font-size: 13px;
+        text-transform: uppercase;
+        margin-bottom: 9px;
+        margin-top: 18px;
+        line-height: 14px;
+      }
+    }
+  }
+}
+

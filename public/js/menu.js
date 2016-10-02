@@ -12,8 +12,6 @@ Menu.prototype = {
 		var s 	= this;
 		s.ele 	= ele;
 
-		console.log(s.ele);
-
 		s.ele.click(function(e){
 			s.toggleMenu();
 		})

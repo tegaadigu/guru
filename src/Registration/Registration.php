@@ -2,6 +2,8 @@
 
 namespace guru\Registration;
 
+use App\User;
+use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Http\JsonResponse;
 
 abstract class Registration
@@ -12,28 +14,51 @@ abstract class Registration
     protected $redirectUrl;
 
     /**
+     * @var Guard
+     */
+    protected $auth;
+
+    /**
+     * Registration constructor.
+     *
+     * @param $redirectUrl
+     * @param Guard $auth
+     */
+    public function __construct($redirectUrl, Guard $auth)
+    {
+        $this->redirectUrl = $redirectUrl;
+        $this->auth = $auth;
+    }
+
+    /**
      * @param array $data
      *
      * @return JsonResponse
      */
     abstract public function register(array $data);
 
-    abstract public function login(array $credentials);
-
     /**
-     * Registration constructor.
+     * @param array $credentials
      *
-     * @param $redirectUrl
+     * @return bool
      */
-    public function __construct($redirectUrl)
+    public function login(array $credentials)
     {
-        $this->redirectUrl = $redirectUrl;
+        return $this->auth->attempt(
+            [
+                'email' => $credentials['email'],
+                'password' => $credentials['password'],
+                'type' => (int) $credentials['type'],
+            ],
+            true
+        );
     }
 
     /**
      * @return string
      */
-    protected function getRedirectUrl(){
+    public function getRedirectUrl()
+    {
         return $this->redirectUrl;
     }
 }

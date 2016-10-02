@@ -6,7 +6,8 @@ module.exports = function(grunt) {
         uglify: {
             min: {
                 files: {
-                    'public/js/min/guru.min.js': ['public/js/menu.js', 'public/js/script.js']
+                    'public/js/min/guru.min.js': ['public/js/menu.js', 'public/js/script.js'],
+                    'public/js/chart.js': ['node_modules/Chart.js/dist/Chart.min.js']
                 }
             },
         },
@@ -14,15 +15,21 @@ module.exports = function(grunt) {
             dev: {
                 files: {
                     "public/css/style.css": "public/less/style.less",
-                    "public/css/operator.css": "public/less/operator.less"
+                    "public/css/operator.css": "public/less/operator.less",
+                    "public/css/dashboard.css": "public/less/dashboard.less",
+                    "public/css/login.css": "public/less/login.less"
                 }
             },
         },
         watch: {
-            scripts: {
+            less: {
                 files: ['public/less/*.less'],
                 tasks: ['less'],
             },
+            scripts: {
+                files: ['public/js/*.js'],
+                tasks: ['uglify']
+            }
         },
     });
 

@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="csrf_token" ="{{ csrf_token() }}" />
     <title>{{ Lang::get('home.guru') }} - {{ Lang::get('home.catch_phrase') }}</title>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="{{ URL::asset('/css/bootstrap.min.css') }}">
@@ -11,6 +10,8 @@
     <link rel="stylesheet" href="{{ URL::asset('/font-awesome/css/font-awesome.min.css') }}">
 
     <link rel="stylesheet" href="{{ URL::asset('css/operator.css') }}">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Condensed">
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="{{ URL::asset('js/jquery.min.js') }}"></script>

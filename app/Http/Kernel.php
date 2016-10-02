@@ -27,9 +27,12 @@ class Kernel extends HttpKernel
      */
     protected $routeMiddleware = [
         'auth' => \App\Http\Middleware\Authenticate::class,
+        'authOperator' => \App\Http\Middleware\AuthenticateOperator::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
         'menu'  => \App\Http\Middleware\LeftMenu::class,
-        'faker' => \App\Http\Middleware\Faker::class
+        'faker' => \App\Http\Middleware\Faker::class,
+        'customerNav' =>  \App\Http\Middleware\CustomerNavigation::class,
+        'dashboardButtons' => \App\Http\Middleware\DashboardMenu::class
     ];
 }

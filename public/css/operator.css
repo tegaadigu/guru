@@ -4,6 +4,25 @@
   display: table;
   clear: both;
 }
+li.dropdown-controller {
+  position: relative;
+}
+/*Aller Font declaration*/
+@font-face {
+  font-family: Aller;
+  src: url("Aller/Aller_Lt.ttf");
+  font-weight: inherit;
+}
+@font-face {
+  font-family: Aller-Bold;
+  src: url("Aller/Aller_Bd.ttf");
+  font-weight: inherit;
+}
+@font-face {
+  font-family: Aller-Regular;
+  src: url("Aller/Aller_Rg.ttf");
+  font-weight: inherit;
+}
 .btn {
   /* just for this demo. */
   margin-top: 5px;
@@ -86,6 +105,7 @@
 }
 body {
   background-color: #fff;
+  font-family: 'Roboto Condensed';
 }
 .body .header {
   background-color: #000;

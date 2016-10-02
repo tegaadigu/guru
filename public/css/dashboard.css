@@ -1,0 +1,282 @@
+/*Variable Declaration..*/
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+li.dropdown-controller {
+  position: relative;
+}
+/*Aller Font declaration*/
+@font-face {
+  font-family: Aller;
+  src: url("Aller/Aller_Lt.ttf");
+  font-weight: inherit;
+}
+@font-face {
+  font-family: Aller-Bold;
+  src: url("Aller/Aller_Bd.ttf");
+  font-weight: inherit;
+}
+@font-face {
+  font-family: Aller-Regular;
+  src: url("Aller/Aller_Rg.ttf");
+  font-weight: inherit;
+}
+.btn {
+  /* just for this demo. */
+  margin-top: 5px;
+}
+.btn-arrow-right,
+.btn-arrow-left {
+  position: relative;
+  padding-left: 18px;
+  padding-right: 18px;
+}
+.btn-arrow-right {
+  padding-left: 36px;
+}
+.btn-arrow-left {
+  padding-right: 36px;
+}
+.btn-arrow-right:before,
+.btn-arrow-right:after,
+.btn-arrow-left:before,
+.btn-arrow-left:after {
+  /* make two squares (before and after), looking similar to the button */
+  content: "";
+  position: absolute;
+  top: 5px;
+  /* move it down because of rounded corners */
+  width: 22px;
+  /* same as height */
+  height: 22px;
+  /* button_outer_height / sqrt(2) */
+  background: inherit;
+  /* use parent background */
+  border: inherit;
+  /* use parent border */
+  border-left-color: transparent;
+  /* hide left border */
+  border-bottom-color: transparent;
+  /* hide bottom border */
+  border-radius: 0px 4px 0px 0px;
+  /* round arrow corner, the shorthand property doesn't accept "inherit" so it is set to 4px */
+  -webkit-border-radius: 0px 4px 0px 0px;
+  -moz-border-radius: 0px 4px 0px 0px;
+}
+.btn-arrow-right:before,
+.btn-arrow-right:after {
+  transform: rotate(45deg);
+  /* rotate right arrow squares 45 deg to point right */
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+}
+.btn-arrow-left:before,
+.btn-arrow-left:after {
+  transform: rotate(225deg);
+  /* rotate left arrow squares 225 deg to point left */
+  -webkit-transform: rotate(225deg);
+  -moz-transform: rotate(225deg);
+  -o-transform: rotate(225deg);
+  -ms-transform: rotate(225deg);
+}
+.btn-arrow-right:before,
+.btn-arrow-left:before {
+  /* align the "before" square to the left */
+  left: -11px;
+}
+.btn-arrow-right:after,
+.btn-arrow-left:after {
+  /* align the "after" square to the right */
+  right: -11px;
+}
+.btn-arrow-right:after,
+.btn-arrow-left:before {
+  /* bring arrow pointers to front */
+  z-index: 1;
+}
+.btn-arrow-right:before,
+.btn-arrow-left:after {
+  /* hide arrow tails background */
+  background-color: white;
+}
+body {
+  overflow: hidden;
+}
+#body {
+  display: flex;
+  font-family: 'Roboto Condensed';
+  background-color: #f7f7f7;
+}
+#left-nav {
+  display: block;
+  float: left;
+  background-color: #f44336;
+  border-right: 1px solid #ddd;
+  height: 100em;
+  width: 10%;
+}
+#left-nav .header {
+  border-bottom: 1px solid #232222;
+  text-align: center;
+  font-size: 40px;
+  color: #fff;
+}
+#left-nav .operator-menu ul li a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px;
+  border-bottom: 1px solid #333232;
+  transition: all 0.5s ease;
+  text-align: center;
+}
+#left-nav .operator-menu ul li a.active {
+  border-left: 5px solid #1d3b66;
+}
+#left-nav .operator-menu ul li a:before {
+  font-family: FontAwesome;
+  padding-right: 10px;
+  display: block;
+  font-size: 40px;
+  text-align: center;
+  height: 100%;
+}
+#left-nav .operator-menu ul li a.home:before {
+  content: '\f015';
+}
+#left-nav .operator-menu ul li a.overview:before {
+  content: "\f0e4";
+}
+#left-nav .operator-menu ul li a.trips:before {
+  content: "\f018";
+}
+#left-nav .operator-menu ul li a.cars:before {
+  content: "\f207";
+}
+#left-nav .operator-menu ul li a.invoices:before {
+  content: "\f0d6";
+}
+#left-nav .operator-menu ul li a:hover {
+  color: #5bc0de;
+}
+#right-nav {
+  display: block;
+  float: left;
+  width: 90%;
+}
+#right-nav .infozone {
+  padding: 5px;
+  background-color: #5bc0de;
+}
+#right-nav .content .content {
+  overflow: scroll;
+  height: 600px;
+  color: #73879C;
+}
+#right-nav .content .tile_count {
+  font-family: "Helvetica Neue", Roboto, Arial, "Droid Sans", sans-serif;
+}
+#right-nav .content .tile_count .tile_stats_count {
+  margin-bottom: 10px;
+  border-bottom: 0;
+  padding: 0 10px 0 20px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  text-align: center;
+}
+#right-nav .content .tile_count .tile_stats_count:first-child:before {
+  content: "";
+  border: none;
+}
+#right-nav .content .tile_count .tile_stats_count:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  height: 65px;
+  border-left: 2px solid #ADB2B5;
+  margin-top: 10px;
+}
+#right-nav .content .tile_count .tile_stats_count .count_top {
+  font-size: 13px;
+}
+#right-nav .content .tile_count .tile_stats_count .count {
+  font-size: 40px;
+  line-height: 47px;
+  font-weight: 600;
+}
+#right-nav .content section.widget {
+  width: 40%;
+  margin-right: 20px;
+  border-radius: 4px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(63, 63, 68, 0.1);
+  background-color: #FFFFFF;
+  margin-bottom: 30px;
+}
+#right-nav .content section.widget.small {
+  width: 20%;
+}
+#right-nav .content .dashboard_graph {
+  background: #fff;
+  padding: 7px 10px;
+}
+#right-nav .content .dashboard_graph .bg-white {
+  padding: 0;
+}
+#right-nav .content .dashboard_graph .progress.progress_sm {
+  border-radius: 0;
+  margin-bottom: 18px;
+  height: 10px !important;
+}
+.row {
+  margin-right: -10px;
+  margin-left: -10px;
+  margin-top: 20px;
+}
+.x_panel {
+  position: relative;
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px 17px;
+  display: inline-block;
+  background: #fff;
+  border: 1px solid #E6E9ED;
+  -webkit-column-break-inside: avoid;
+  -moz-column-break-inside: avoid;
+  column-break-inside: avoid;
+  opacity: 1;
+  transition: all .2s ease;
+}
+.x_title {
+  padding: 5px 5px 7px;
+  border-bottom: 2px solid #E6E9ED;
+  margin-bottom: 10px;
+}
+.x_title h3 {
+  margin: 0;
+  font-weight: normal;
+}
+.x_title h2 {
+  margin: 5px 0 6px;
+  float: left;
+  display: block;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 18px;
+  font-weight: 400;
+  width: 50%;
+}
+.x_content {
+  padding: 0 5px 6px;
+  position: relative;
+  width: 100%;
+  float: left;
+  clear: both;
+  margin-top: 5px;
+}

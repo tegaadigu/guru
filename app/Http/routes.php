@@ -31,16 +31,97 @@ Route::post(
     '/operator/register',
     [
         'as' => 'operator',
-        'uses' => 'Operator@register'
+        'uses' => 'Operator@register',
     ]
 );
 
 
 Route::get(
-    '/dashboard',
+    'operator/dashboard',
     [
         'as' => 'operator',
         'uses' => 'Operator@dashboard',
+    ]
+);
+
+Route::get(
+    'operator/logout',
+    [
+        'as' => 'operator',
+        'uses' => 'Operator@logout',
+    ]
+);
+
+Route::get(
+    'operator/login',
+    [
+        'as' => 'operator',
+        'uses' => 'Operator@login',
+    ]
+);
+Route::post(
+    'operator/signin',
+    [
+        'as' => 'operator',
+        'uses' => 'Operator@signIn',
+    ]
+);
+
+Route::get(
+    'operator/vehicle',
+    [
+        'as' => 'operator',
+        'uses' => 'OperatorVehicle@index',
+    ]
+);
+
+Route::post(
+    'signin',
+    [
+        'as' => 'user',
+        'uses' => 'Index@signIn',
+    ]
+);
+
+Route::get(
+    'customer',
+    [
+        'middleware' => ['dashboardButtons'],
+        'as' => 'user',
+        'uses' => 'Customer@index'
+    ]
+);
+
+Route::get(
+    'customer/dashboard',
+    [
+        'middleware' => ['dashboardButtons'],
+        'as' => 'user',
+        'uses' => 'Customer@index',
+    ]
+);
+
+Route::get(
+    'customer/transit',
+    [
+        'as' => 'user',
+        'uses' => 'Customer@transit',
+    ]
+);
+
+Route::get(
+    'api/googlePlaces',
+    [
+        'as' => 'api',
+        'uses' => 'Api@googlePlaces'
+    ]
+);
+
+Route::get(
+  'customer/transitresult',
+    [
+        'as' => 'user',
+        'uses' => 'Customer@transitResult'
     ]
 );
 

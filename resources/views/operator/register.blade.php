@@ -11,7 +11,8 @@
                     Sign up to ride with Guru.
                 </h2>
                 <div class="tag-description">
-                    {{ $faker->paragraph(3, true) }}
+                    If you are a registered Operator with Guru technologies, Please
+                    <a href="{{ url('operator/login') }}">Login</a> to your Guru account.
                 </div>
             </div>
         </div>
